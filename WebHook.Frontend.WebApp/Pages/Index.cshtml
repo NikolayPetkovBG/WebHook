@@ -1,0 +1,35 @@
+﻿@page
+@using WebHook.Frontend.WebApp.Models;
+@model WebHookViewModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<p>Add WebHook:</p>
+
+<div class="login">
+    @using (Html.BeginForm("Create", "Home"))
+    {
+        <div class="form-group form-group-sm">
+            <label class="control-label" for="Name">Name</label>
+            @Html.TextBoxFor(model => model.Name, new { @class = "form-control", @placeholder = "Name" })
+        </div>
+
+
+        <div class="form-group form-group-sm">
+            <label class="control-label" for="Url">Password</label>
+            @Html.TextBoxFor(model => model.Url, new { @class = "form-control", @placeholder = "Url" })
+        </div>
+
+
+        <div class="buttons right">
+            <input type="submit" class="btn btn-primary btn-sm" value="Create" />
+        </div>
+    }
+</div>
+
+<form asp-controller="Home" asp-action="Create" method="post">
+   
+    <button type="submit">Create</button>
+
+</form>

@@ -1,0 +1,13 @@
+using System;
+
+namespace WebHook.Frontend.WebApp.Models
+{
+    public class WebHookViewModel
+    {
+        public int Id { get; set; }
+
+        public string Name { get; set; }
+
+        public string Url { get; set; }
+    }
+}
